@@ -33,9 +33,9 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
   };
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'RUB',
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -54,16 +54,16 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
       message: '',
       type: 'general',
     });
-    alert('Your message has been sent! We\'ll contact you soon.');
+    alert('Ваше сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
   };
 
   const specifications = [
-    { icon: Calendar, label: 'Year', value: car.year.toString() },
-    { icon: Gauge, label: 'Mileage', value: `${car.mileage.toLocaleString()} miles` },
-    { icon: Fuel, label: 'Fuel Type', value: car.fuelType },
-    { icon: Settings, label: 'Transmission', value: car.transmission },
-    { icon: Palette, label: 'Color', value: car.color },
-    { icon: Award, label: 'Body Type', value: car.bodyType },
+    { icon: Calendar, label: 'Год выпуска', value: car.year.toString() },
+    { icon: Gauge, label: 'Пробег', value: `${car.mileage.toLocaleString()} км` },
+    { icon: Fuel, label: 'Тип топлива', value: car.fuelType },
+    { icon: Settings, label: 'Коробка передач', value: car.transmission },
+    { icon: Palette, label: 'Цвет', value: car.color },
+    { icon: Award, label: 'Тип кузова', value: car.bodyType },
   ];
 
   return (
@@ -77,13 +77,13 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
               className="flex items-center space-x-2 text-gray-600 hover:text-blue-700 transition-colors duration-200"
             >
               <ArrowLeft className="h-5 w-5" />
-              <span>Back to Catalog</span>
+              <span>Вернуться в каталог</span>
             </button>
             
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1 text-gray-500 text-sm">
                 <Eye className="h-4 w-4" />
-                <span>{car.views} views</span>
+                <span>{car.views} просмотров</span>
               </div>
               
               <button
@@ -95,7 +95,7 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
                     favorites.includes(car.id) ? 'fill-red-500 text-red-500' : 'text-gray-600'
                   }`}
                 />
-                <span>{favorites.includes(car.id) ? 'Saved' : 'Save'}</span>
+                <span>{favorites.includes(car.id) ? 'Сохранено' : 'Сохранить'}</span>
               </button>
             </div>
           </div>
@@ -133,12 +133,12 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
                 <div className="absolute top-4 left-4 flex flex-col space-y-2">
                   {car.isFeatured && (
                     <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                      Featured
+                      Рекомендуемый
                     </span>
                   )}
                   {!car.isAvailable && (
                     <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Sold
+                      Продан
                     </span>
                   )}
                 </div>
@@ -170,7 +170,7 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
 
             {/* Vehicle Information */}
             <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Vehicle Information</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Информация об автомобиле</h2>
               
               {/* Basic Specs Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
@@ -190,13 +190,13 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
 
               {/* Description */}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Description</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Описание</h3>
                 <p className="text-gray-600 leading-relaxed">{car.description}</p>
               </div>
 
               {/* Features */}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Features</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Особенности</h3>
                 <div className="flex flex-wrap gap-2">
                   {car.features.map((feature, index) => (
                     <span
@@ -211,33 +211,33 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
 
               {/* Engine Specifications */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Performance Specifications</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Технические характеристики</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-3">
                     <div>
-                      <p className="text-sm text-gray-600">Engine</p>
+                      <p className="text-sm text-gray-600">Двигатель</p>
                       <p className="font-semibold">{car.specifications.engine}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Horsepower</p>
-                      <p className="font-semibold">{car.specifications.horsepower} HP</p>
+                      <p className="text-sm text-gray-600">Мощность</p>
+                      <p className="font-semibold">{car.specifications.horsepower} л.с.</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Torque</p>
+                      <p className="text-sm text-gray-600">Крутящий момент</p>
                       <p className="font-semibold">{car.specifications.torque}</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div>
-                      <p className="text-sm text-gray-600">0-60 mph</p>
+                      <p className="text-sm text-gray-600">0-100 км/ч</p>
                       <p className="font-semibold">{car.specifications.acceleration}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Top Speed</p>
+                      <p className="text-sm text-gray-600">Максимальная скорость</p>
                       <p className="font-semibold">{car.specifications.topSpeed}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Fuel Economy</p>
+                      <p className="text-sm text-gray-600">Расход топлива</p>
                       <p className="font-semibold">{car.specifications.fuelEconomy}</p>
                     </div>
                   </div>
@@ -260,30 +260,30 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
               <div className="space-y-4">
                 <button
                   onClick={() => {
-                    setContactFormData({ ...contactFormData, type: 'test-drive', message: `I'm interested in scheduling a test drive for the ${car.brand} ${car.model}.` });
+                    setContactFormData({ ...contactFormData, type: 'test-drive', message: `Меня интересует тест-драйв ${car.brand} ${car.model}.` });
                     setShowContactForm(true);
                   }}
                   className="w-full flex items-center justify-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>Schedule Test Drive</span>
+                  <span>Записаться на тест-драйв</span>
                 </button>
                 
                 <button
                   onClick={() => {
-                    setContactFormData({ ...contactFormData, type: 'consultation', message: `I'm interested in learning more about the ${car.brand} ${car.model}.` });
+                    setContactFormData({ ...contactFormData, type: 'consultation', message: `Меня интересует подробная информация о ${car.brand} ${car.model}.` });
                     setShowContactForm(true);
                   }}
                   className="w-full flex items-center justify-center space-x-2 bg-gray-700 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  <span>Request Information</span>
+                  <span>Запросить информацию</span>
                 </button>
               </div>
 
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-600 text-center">
-                  Have questions? Our experts are here to help you find the perfect vehicle.
+                  Остались вопросы? Наши эксперты помогут вам найти идеальный автомобиль.
                 </p>
               </div>
             </div>
@@ -295,11 +295,11 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-md w-full p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Contact Us</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Связаться с нами</h3>
             
             <form onSubmit={handleContactSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Имя</label>
                 <input
                   type="text"
                   required
@@ -321,7 +321,7 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
                 <input
                   type="tel"
                   required
@@ -332,7 +332,7 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Сообщение</label>
                 <textarea
                   rows={4}
                   required
@@ -347,14 +347,14 @@ export const CarDetails: React.FC<CarDetailsProps> = ({ car, onBack }) => {
                   type="submit"
                   className="flex-1 bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg font-semibold transition-colors duration-200"
                 >
-                  Send Message
+                  Отправить сообщение
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowContactForm(false)}
                   className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 rounded-lg font-semibold transition-colors duration-200"
                 >
-                  Cancel
+                  Отмена
                 </button>
               </div>
             </form>

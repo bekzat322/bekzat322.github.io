@@ -100,7 +100,7 @@ export const CarManagement: React.FC = () => {
   };
 
   const handleDelete = (id: string) => {
-    if (window.confirm('Are you sure you want to delete this car?')) {
+    if (window.confirm('Вы уверены, что хотите удалить этот автомобиль?')) {
       deleteCar(id);
     }
   };
@@ -114,9 +114,9 @@ export const CarManagement: React.FC = () => {
   };
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'RUB',
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -125,13 +125,13 @@ export const CarManagement: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">Car Management</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Управление автомобилями</h2>
         <button
           onClick={() => setShowAddForm(true)}
           className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
         >
           <Plus className="h-5 w-5" />
-          <span>Add New Car</span>
+          <span>Добавить новый автомобиль</span>
         </button>
       </div>
 
@@ -142,19 +142,19 @@ export const CarManagement: React.FC = () => {
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Vehicle
+                  Автомобиль
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Price
+                  Цена
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
+                  Статус
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Views
+                  Просмотры
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
+                  Действия
                 </th>
               </tr>
             </thead>
@@ -185,7 +185,7 @@ export const CarManagement: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       {car.isFeatured && (
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          Featured
+                          Рекомендуемый
                         </span>
                       )}
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
@@ -193,7 +193,7 @@ export const CarManagement: React.FC = () => {
                           ? 'bg-green-100 text-green-800'
                           : 'bg-red-100 text-red-800'
                       }`}>
-                        {car.isAvailable ? 'Available' : 'Sold'}
+                        {car.isAvailable ? 'Доступен' : 'Продан'}
                       </span>
                     </div>
                   </td>
@@ -212,7 +212,7 @@ export const CarManagement: React.FC = () => {
                             ? 'text-yellow-600 hover:text-yellow-700'
                             : 'text-gray-400 hover:text-yellow-600'
                         }`}
-                        title={car.isFeatured ? 'Remove from featured' : 'Add to featured'}
+                        title={car.isFeatured ? 'Убрать из рекомендуемых' : 'Добавить в рекомендуемые'}
                       >
                         <Star className="h-4 w-4" />
                       </button>
@@ -224,7 +224,7 @@ export const CarManagement: React.FC = () => {
                             ? 'text-green-600 hover:text-red-600'
                             : 'text-red-600 hover:text-green-600'
                         }`}
-                        title={car.isAvailable ? 'Mark as sold' : 'Mark as available'}
+                        title={car.isAvailable ? 'Отметить как проданный' : 'Отметить как доступный'}
                       >
                         {car.isAvailable ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
                       </button>
@@ -232,7 +232,7 @@ export const CarManagement: React.FC = () => {
                       <button
                         onClick={() => handleEdit(car)}
                         className="p-1 text-blue-600 hover:text-blue-700 rounded"
-                        title="Edit car"
+                        title="Редактировать автомобиль"
                       >
                         <Edit className="h-4 w-4" />
                       </button>
@@ -240,7 +240,7 @@ export const CarManagement: React.FC = () => {
                       <button
                         onClick={() => handleDelete(car.id)}
                         className="p-1 text-red-600 hover:text-red-700 rounded"
-                        title="Delete car"
+                        title="Удалить автомобиль"
                       >
                         <Trash2 className="h-4 w-4" />
                       </button>
@@ -258,17 +258,17 @@ export const CarManagement: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl max-w-4xl w-full max-h-screen overflow-y-auto p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-6">
-              {editingCar ? 'Edit Car' : 'Add New Car'}
+              {editingCar ? 'Редактировать автомобиль' : 'Добавить новый автомобиль'}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Basic Information */}
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-gray-900">Basic Information</h4>
+                  <h4 className="font-semibold text-gray-900">Основная информация</h4>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Brand</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Бренд</label>
                     <input
                       type="text"
                       required
@@ -279,7 +279,7 @@ export const CarManagement: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Model</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Модель</label>
                     <input
                       type="text"
                       required
@@ -291,7 +291,7 @@ export const CarManagement: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Год</label>
                       <input
                         type="number"
                         required
@@ -301,7 +301,7 @@ export const CarManagement: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Цена</label>
                       <input
                         type="number"
                         required

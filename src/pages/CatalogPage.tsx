@@ -62,8 +62,8 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({ onCarClick, initialFil
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Car Catalog</h1>
-          <p className="text-gray-600">Discover your perfect vehicle from our premium collection</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Каталог автомобилей</h1>
+          <p className="text-gray-600">Откройте для себя идеальный автомобиль из нашей премиум коллекции</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">

@@ -22,9 +22,9 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
   };
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'RUB',
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -34,10 +34,10 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Featured Vehicles
+            Рекомендуемые автомобили
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Handpicked premium vehicles that represent the best in luxury, performance, and value
+            Отобранные вручную премиум автомобили, которые представляют лучшее в роскоши, производительности и ценности
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                    Featured
+                    Рекомендуемый
                   </span>
                 </div>
                 <button
@@ -88,7 +88,7 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
                 <div className="flex items-center text-gray-600 text-sm mb-4">
                   <span>{car.year}</span>
                   <span className="mx-2">•</span>
-                  <span>{car.mileage.toLocaleString()} miles</span>
+                  <span>{car.mileage.toLocaleString()} км</span>
                   <span className="mx-2">•</span>
                   <span>{car.fuelType}</span>
                 </div>
@@ -108,13 +108,13 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
                   ))}
                   {car.features.length > 3 && (
                     <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                      +{car.features.length - 3} more
+                      +{car.features.length - 3} еще
                     </span>
                   )}
                 </div>
 
                 <button className="w-full flex items-center justify-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition-colors duration-200 group">
-                  <span>View Details</span>
+                  <span>Посмотреть детали</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
               </div>
@@ -127,7 +127,7 @@ export const FeaturedCars: React.FC<FeaturedCarsProps> = ({ onCarClick, onViewAl
             onClick={onViewAll}
             className="inline-flex items-center space-x-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
           >
-            <span>View All Vehicles</span>
+            <span>Посмотреть все автомобили</span>
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>

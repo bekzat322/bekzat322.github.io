@@ -11,7 +11,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick }) => {
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Luxury Cars"
+          alt="Роскошные автомобили"
           className="w-full h-full object-cover opacity-20"
         />
       </div>
@@ -19,12 +19,12 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick }) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Find Your Perfect
-            <span className="block text-yellow-400">Luxury Vehicle</span>
+            Найдите свой идеальный
+            <span className="block text-yellow-400">роскошный автомобиль</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Discover premium cars from the world's most prestigious brands. Quality, elegance, and performance guaranteed.
+            Откройте для себя премиум автомобили от самых престижных брендов мира. Гарантированы качество, элегантность и производительность.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -33,12 +33,12 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick }) => {
               className="group flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Search className="h-6 w-6" />
-              <span>Search Inventory</span>
+              <span>Поиск в каталоге</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
             
             <button className="flex items-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
-              <span>Schedule Test Drive</span>
+              <span>Записаться на тест-драйв</span>
             </button>
           </div>
         </div>

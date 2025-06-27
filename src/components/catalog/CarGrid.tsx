@@ -1,11 +1,11 @@
 import React from 'react';
-import { Heart, Eye, Calendar, Gauge, Fuel, Settings } from 'lucide-react';
-import type { Car } from '../../types';
+import { Heart, Eye, Calendar, Gauge, Fuel, Settings, Car } from 'lucide-react';
+import type { Car as CarType } from '../../types';
 import { useApp } from '../../context/AppContext';
 
 interface CarGridProps {
-  cars: Car[];
-  onCarClick: (car: Car) => void;
+  cars: CarType[];
+  onCarClick: (car: CarType) => void;
 }
 
 export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
@@ -21,9 +21,9 @@ export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
   };
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'RUB',
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -34,8 +34,8 @@ export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
         <div className="text-gray-400 mb-4">
           <Car className="h-16 w-16 mx-auto mb-4" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">No cars found</h3>
-        <p className="text-gray-600">Try adjusting your filters to see more results.</p>
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">Автомобили не найдены</h3>
+        <p className="text-gray-600">Попробуйте изменить фильтры для поиска большего количества результатов.</p>
       </div>
     );
   }
@@ -59,12 +59,12 @@ export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
             <div className="absolute top-3 left-3 flex flex-col space-y-2">
               {car.isFeatured && (
                 <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-semibold">
-                  Featured
+                  Рекомендуемый
                 </span>
               )}
               {!car.isAvailable && (
                 <span className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                  Sold
+                  Продано
                 </span>
               )}
             </div>
@@ -104,7 +104,7 @@ export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
             <div className="grid grid-cols-2 gap-2 mb-3 text-xs text-gray-600">
               <div className="flex items-center space-x-1">
                 <Gauge className="h-3 w-3" />
-                <span>{car.mileage.toLocaleString()} mi</span>
+                <span>{car.mileage.toLocaleString()} км</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Fuel className="h-3 w-3" />
@@ -139,7 +139,7 @@ export const CarGrid: React.FC<CarGridProps> = ({ cars, onCarClick }) => {
             </div>
 
             <button className="w-full bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg font-semibold text-sm transition-colors duration-200">
-              View Details
+              Посмотреть детали
             </button>
           </div>
         </div>

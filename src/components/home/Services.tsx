@@ -5,38 +5,38 @@ export const Services: React.FC = () => {
   const services = [
     {
       icon: Car,
-      title: 'Premium Vehicle Sales',
-      description: 'Carefully curated selection of luxury and premium vehicles from top brands worldwide.',
+      title: 'Продажа премиум автомобилей',
+      description: 'Тщательно отобранная коллекция роскошных и премиум автомобилей от ведущих брендов мира.',
       color: 'bg-blue-500',
     },
     {
       icon: CreditCard,
-      title: 'Flexible Financing',
-      description: 'Competitive financing options with flexible terms to fit your budget and lifestyle.',
+      title: 'Гибкое финансирование',
+      description: 'Конкурентные варианты финансирования с гибкими условиями, подходящими вашему бюджету и образу жизни.',
       color: 'bg-green-500',
     },
     {
       icon: Shield,
-      title: 'Extended Warranties',
-      description: 'Comprehensive warranty coverage to protect your investment and ensure peace of mind.',
+      title: 'Расширенная гарантия',
+      description: 'Комплексное гарантийное покрытие для защиты ваших инвестиций и обеспечения спокойствия.',
       color: 'bg-purple-500',
     },
     {
       icon: Wrench,
-      title: 'Expert Service',
-      description: 'Professional maintenance and repair services by certified technicians.',
+      title: 'Экспертное обслуживание',
+      description: 'Профессиональное техническое обслуживание и ремонт сертифицированными техниками.',
       color: 'bg-orange-500',
     },
     {
       icon: HeadphonesIcon,
-      title: '24/7 Customer Support',
-      description: 'Round-the-clock support to assist you with any questions or concerns.',
+      title: 'Поддержка 24/7',
+      description: 'Круглосуточная поддержка для помощи с любыми вопросами или проблемами.',
       color: 'bg-red-500',
     },
     {
       icon: Award,
-      title: 'Quality Guarantee',
-      description: 'Every vehicle undergoes rigorous inspection to ensure the highest quality standards.',
+      title: 'Гарантия качества',
+      description: 'Каждый автомобиль проходит тщательную проверку для обеспечения высочайших стандартов качества.',
       color: 'bg-yellow-500',
     },
   ];
@@ -46,10 +46,10 @@ export const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose AutoLux?
+            Почему выбирают Роман Авто?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive automotive solutions with unmatched quality and service excellence
+            Мы предоставляем комплексные автомобильные решения с непревзойденным качеством и превосходным сервисом
           </p>
         </div>
 
@@ -79,17 +79,17 @@ export const Services: React.FC = () => {
 
         <div className="mt-16 bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl p-8 md:p-12 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to Find Your Dream Car?
+            Готовы найти автомобиль мечты?
           </h3>
           <p className="text-lg md:text-xl mb-8 text-blue-100">
-            Join thousands of satisfied customers who found their perfect vehicle with us
+            Присоединяйтесь к тысячам довольных клиентов, которые нашли свой идеальный автомобиль с нами
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              Browse Inventory
+              Просмотреть каталог
             </button>
             <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
-              Schedule Consultation
+              Записаться на консультацию
             </button>
           </div>
         </div>

@@ -3,53 +3,53 @@ import { Award, Users, Shield, Star, CheckCircle, TrendingUp } from 'lucide-reac
 
 export const AboutPage: React.FC = () => {
   const stats = [
-    { icon: Users, label: 'Happy Customers', value: '10,000+' },
-    { icon: Star, label: 'Years in Business', value: '25+' },
-    { icon: Award, label: 'Awards Won', value: '50+' },
-    { icon: CheckCircle, label: 'Cars Sold', value: '15,000+' },
+    { icon: Users, label: 'Довольных клиентов', value: '10,000+' },
+    { icon: Star, label: 'Лет в бизнесе', value: '25+' },
+    { icon: Award, label: 'Полученных наград', value: '50+' },
+    { icon: CheckCircle, label: 'Продано автомобилей', value: '15,000+' },
   ];
 
   const values = [
     {
       icon: Shield,
-      title: 'Trust & Transparency',
-      description: 'We believe in honest dealings and transparent pricing. Every vehicle comes with a detailed history report and our quality guarantee.',
+      title: 'Доверие и прозрачность',
+      description: 'Мы верим в честные сделки и прозрачное ценообразование. Каждый автомобиль поставляется с подробным отчетом об истории и нашей гарантией качества.',
     },
     {
       icon: Award,
-      title: 'Quality Excellence',
-      description: 'Our rigorous inspection process ensures that every car meets the highest standards of quality, safety, and performance.',
+      title: 'Превосходство качества',
+      description: 'Наш строгий процесс проверки гарантирует, что каждый автомобиль соответствует высочайшим стандартам качества, безопасности и производительности.',
     },
     {
       icon: Users,
-      title: 'Customer First',
-      description: 'Your satisfaction is our priority. We provide personalized service and ongoing support throughout your car ownership journey.',
+      title: 'Клиент превыше всего',
+      description: 'Ваше удовлетворение - наш приоритет. Мы обеспечиваем персонализированное обслуживание и постоянную поддержку на протяжении всего владения автомобилем.',
     },
     {
       icon: TrendingUp,
-      title: 'Innovation',
-      description: 'We stay ahead of automotive trends, offering the latest models and cutting-edge technology to enhance your driving experience.',
+      title: 'Инновации',
+      description: 'Мы опережаем автомобильные тренды, предлагая новейшие модели и передовые технологии для улучшения вашего опыта вождения.',
     },
   ];
 
   const team = [
     {
-      name: 'Michael Johnson',
-      role: 'CEO & Founder',
+      name: 'Михаил Романов',
+      role: 'Генеральный директор и основатель',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'With over 30 years in the automotive industry, Michael founded AutoLux with a vision to revolutionize luxury car sales.',
+      description: 'Имея более 30 лет опыта в автомобильной индустрии, Михаил основал Роман Авто с видением революционизировать продажи роскошных автомобилей.',
     },
     {
-      name: 'Sarah Williams',
-      role: 'Sales Director',
+      name: 'Сара Уильямс',
+      role: 'Директор по продажам',
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Sarah leads our sales team with expertise in luxury vehicles and a passion for matching customers with their perfect car.',
+      description: 'Сара возглавляет нашу команду продаж с экспертизой в роскошных автомобилях и страстью к поиску идеального автомобиля для клиентов.',
     },
     {
-      name: 'David Chen',
-      role: 'Service Manager',
+      name: 'Дэвид Чен',
+      role: 'Менеджер сервиса',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'David ensures every vehicle meets our quality standards through comprehensive inspections and maintenance protocols.',
+      description: 'Дэвид гарантирует, что каждый автомобиль соответствует нашим стандартам качества через комплексные проверки и протоколы обслуживания.',
     },
   ];
 
@@ -60,15 +60,15 @@ export const AboutPage: React.FC = () => {
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Luxury Cars"
+            alt="Роскошные автомобили"
             className="w-full h-full object-cover opacity-20"
           />
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">About AutoLux</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">О компании Роман Авто</h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Your trusted partner in luxury automotive excellence for over 25 years
+            Ваш надежный партнер в превосходстве роскошных автомобилей на протяжении более 25 лет
           </p>
         </div>
       </div>
@@ -98,30 +98,30 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Наша история</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 1999, AutoLux began as a small family business with a simple mission: 
-                  to provide exceptional luxury vehicles with unmatched customer service. What started 
-                  as a single showroom has grown into one of the region's most trusted automotive dealerships.
+                  Основанная в 1999 году, Роман Авто начинала как небольшой семейный бизнес с простой миссией: 
+                  предоставлять исключительные роскошные автомобили с непревзойденным обслуживанием клиентов. То, что начиналось 
+                  как один автосалон, выросло в один из самых надежных автомобильных дилерских центров региона.
                 </p>
                 <p>
-                  Over the years, we've built lasting relationships with customers who return to us 
-                  for their automotive needs, generation after generation. Our commitment to quality, 
-                  integrity, and innovation has earned us numerous industry awards and, more importantly, 
-                  the trust of thousands of satisfied customers.
+                  За годы мы построили долгосрочные отношения с клиентами, которые возвращаются к нам 
+                  для удовлетворения своих автомобильных потребностей из поколения в поколение. Наша приверженность качеству, 
+                  честности и инновациям принесла нам множество отраслевых наград и, что еще важнее, 
+                  доверие тысяч довольных клиентов.
                 </p>
                 <p>
-                  Today, AutoLux continues to evolve, embracing new technologies and expanding our 
-                  inventory to include the latest luxury vehicles, electric cars, and hybrid models. 
-                  Our passion for automotive excellence drives everything we do.
+                  Сегодня Роман Авто продолжает развиваться, принимая новые технологии и расширяя наш 
+                  инвентарь, включая новейшие роскошные автомобили, электромобили и гибридные модели. 
+                  Наша страсть к автомобильному превосходству движет всем, что мы делаем.
                 </p>
               </div>
             </div>
             <div className="relative">
               <img
                 src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="AutoLux Showroom"
+                alt="Автосалон Роман Авто"
                 className="rounded-xl shadow-2xl"
               />
             </div>
@@ -133,9 +133,9 @@ export const AboutPage: React.FC = () => {
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Наши ценности</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do at AutoLux
+              Принципы, которые направляют все, что мы делаем в Роман Авто
             </p>
           </div>
 
@@ -164,9 +164,9 @@ export const AboutPage: React.FC = () => {
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Познакомьтесь с нашей командой</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The experienced professionals dedicated to serving you
+              Опытные профессионалы, посвятившие себя служению вам
             </p>
           </div>
 
@@ -192,16 +192,16 @@ export const AboutPage: React.FC = () => {
       {/* CTA Section */}
       <div className="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Dream Car?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Готовы найти автомобиль своей мечты?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Experience the AutoLux difference. Visit our showroom or browse our online inventory today.
+            Почувствуйте разницу Роман Авто. Посетите наш автосалон или просмотрите наш онлайн-каталог сегодня.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300">
-              Browse Inventory
+              Просмотреть каталог
             </button>
             <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
-              Schedule Visit
+              Записаться на визит
             </button>
           </div>
         </div>

@@ -12,10 +12,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'catalog', label: 'Catalog' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', label: 'Главная' },
+    { id: 'catalog', label: 'Каталог' },
+    { id: 'about', label: 'О нас' },
+    { id: 'contact', label: 'Контакты' },
   ];
 
   const handleNavClick = (pageId: string) => {
@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
             onClick={() => handleNavClick('home')}
           >
             <Car className="h-8 w-8 text-blue-700" />
-            <span className="text-xl font-bold text-gray-900">AutoLux</span>
+            <span className="text-xl font-bold text-gray-900">Роман Авто</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
                   onClick={logout}
                   className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors duration-200"
                 >
-                  Logout
+                  Выйти
                 </button>
               </div>
             ) : (
@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
                 onClick={() => handleNavClick('login')}
                 className="px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition-colors duration-200"
               >
-                Admin Login
+                Вход для админа
               </button>
             )}
           </div>
@@ -127,7 +127,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
                   className="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-700 transition-colors duration-200"
                 >
                   <Heart className="h-5 w-5" />
-                  <span>Favorites ({favorites.length})</span>
+                  <span>Избранное ({favorites.length})</span>
                 </button>
                 
                 {isAuthenticated ? (
@@ -136,13 +136,13 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
                       onClick={() => handleNavClick('admin')}
                       className="px-3 py-2 text-sm font-medium text-blue-700 bg-blue-50 rounded-md"
                     >
-                      Admin
+                      Админ
                     </button>
                     <button
                       onClick={logout}
                       className="px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-md"
                     >
-                      Logout
+                      Выйти
                     </button>
                   </div>
                 ) : (
@@ -150,7 +150,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => 
                     onClick={() => handleNavClick('login')}
                     className="px-3 py-2 text-sm font-medium text-blue-700 bg-blue-50 rounded-md"
                   >
-                    Admin Login
+                    Вход для админа
                   </button>
                 )}
               </div>

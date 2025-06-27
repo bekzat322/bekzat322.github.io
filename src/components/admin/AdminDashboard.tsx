@@ -15,10 +15,10 @@ export const AdminDashboard: React.FC = () => {
   const totalViews = cars.reduce((sum, car) => sum + car.views, 0);
 
   const tabs = [
-    { id: 'overview', label: 'Overview', icon: BarChart3 },
-    { id: 'cars', label: 'Car Management', icon: Car },
-    { id: 'messages', label: 'Messages', icon: MessageSquare },
-    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+    { id: 'overview', label: 'Обзор', icon: BarChart3 },
+    { id: 'cars', label: 'Управление автомобилями', icon: Car },
+    { id: 'messages', label: 'Сообщения', icon: MessageSquare },
+    { id: 'analytics', label: 'Аналитика', icon: BarChart3 },
   ];
 
   const renderContent = () => {
@@ -40,7 +40,7 @@ export const AdminDashboard: React.FC = () => {
                     <Car className="h-6 w-6 text-blue-600" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Total Cars</p>
+                    <p className="text-sm font-medium text-gray-600">Всего автомобилей</p>
                     <p className="text-2xl font-bold text-gray-900">{totalCars}</p>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export const AdminDashboard: React.FC = () => {
                     <Plus className="h-6 w-6 text-yellow-600" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Featured Cars</p>
+                    <p className="text-sm font-medium text-gray-600">Рекомендуемые автомобили</p>
                     <p className="text-2xl font-bold text-gray-900">{featuredCars}</p>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export const AdminDashboard: React.FC = () => {
                     <MessageSquare className="h-6 w-6 text-red-600" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Pending Messages</p>
+                    <p className="text-sm font-medium text-gray-600">Сообщения в ожидании</p>
                     <p className="text-2xl font-bold text-gray-900">{pendingMessages}</p>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export const AdminDashboard: React.FC = () => {
                     <Users className="h-6 w-6 text-green-600" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Total Views</p>
+                    <p className="text-sm font-medium text-gray-600">Всего просмотров</p>
                     <p className="text-2xl font-bold text-gray-900">{totalViews.toLocaleString()}</p>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export const AdminDashboard: React.FC = () => {
             {/* Recent Activity */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200">
               <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Recent Activity</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Последняя активность</h3>
               </div>
               <div className="p-6">
                 <div className="space-y-4">
@@ -97,10 +97,10 @@ export const AdminDashboard: React.FC = () => {
                       </div>
                       <div className="flex-1">
                         <p className="text-sm font-medium text-gray-900">
-                          New {form.type} from {form.name}
+                          Новое {form.type === 'general' ? 'обращение' : form.type} от {form.name}
                         </p>
                         <p className="text-xs text-gray-500">
-                          {new Date(form.createdAt).toLocaleDateString()}
+                          {new Date(form.createdAt).toLocaleDateString('ru-RU')}
                         </p>
                       </div>
                       <span className={`px-2 py-1 text-xs rounded-full ${
@@ -108,7 +108,8 @@ export const AdminDashboard: React.FC = () => {
                         form.status === 'contacted' ? 'bg-blue-100 text-blue-800' :
                         'bg-green-100 text-green-800'
                       }`}>
-                        {form.status}
+                        {form.status === 'pending' ? 'В ожидании' : 
+                         form.status === 'contacted' ? 'Связались' : 'Закрыто'}
                       </span>
                     </div>
                   ))}
@@ -124,8 +125,8 @@ export const AdminDashboard: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-          <p className="text-gray-600 mt-2">Manage your car inventory and customer inquiries</p>
+          <h1 className="text-3xl font-bold text-gray-900">Панель администратора</h1>
+          <p className="text-gray-600 mt-2">Управляйте каталогом автомобилей и обращениями клиентов</p>
         </div>
 
         {/* Navigation Tabs */}

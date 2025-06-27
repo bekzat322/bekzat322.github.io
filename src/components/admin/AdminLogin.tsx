@@ -25,10 +25,10 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
       if (success) {
         onLoginSuccess();
       } else {
-        setError('Invalid username or password');
+        setError('Неверное имя пользователя или пароль');
       }
     } catch (err) {
-      setError('Login failed. Please try again.');
+      setError('Ошибка входа. Пожалуйста, попробуйте снова.');
     } finally {
       setIsLoading(false);
     }
@@ -41,9 +41,9 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
           <div className="mx-auto h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
             <Lock className="h-6 w-6 text-blue-600" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">Admin Login</h2>
+          <h2 className="mt-6 text-3xl font-bold text-gray-900">Вход для администратора</h2>
           <p className="mt-2 text-sm text-gray-600">
-            Sign in to access the admin panel
+            Войдите для доступа к панели администратора
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
           <div className="space-y-4">
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-                Username
+                Имя пользователя
               </label>
               <div className="mt-1 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -73,14 +73,14 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
                     setCredentials({ ...credentials, username: e.target.value })
                   }
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter your username"
+                  placeholder="Введите имя пользователя"
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+                Пароль
               </label>
               <div className="mt-1 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -96,7 +96,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
                     setCredentials({ ...credentials, password: e.target.value })
                   }
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter your password"
+                  placeholder="Введите пароль"
                 />
               </div>
             </div>

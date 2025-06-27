@@ -21,16 +21,16 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({ onCarClick }) => {
             <div className="mx-auto h-24 w-24 bg-gray-200 rounded-full flex items-center justify-center mb-8">
               <Heart className="h-12 w-12 text-gray-400" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Your Favorites</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Ваши избранные</h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              You haven't saved any cars yet. Browse our catalog and click the heart icon to save your favorite vehicles.
+              Вы еще не сохранили ни одного автомобиля. Просмотрите наш каталог и нажмите на иконку сердца, чтобы сохранить понравившиеся автомобили.
             </p>
             <button
               onClick={() => window.history.back()}
               className="inline-flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               <ShoppingCart className="h-6 w-6" />
-              <span>Browse Catalog</span>
+              <span>Просмотреть каталог</span>
             </button>
           </div>
         </div>
@@ -44,10 +44,10 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({ onCarClick }) => {
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-2">
             <Heart className="h-8 w-8 text-red-500" />
-            <h1 className="text-3xl font-bold text-gray-900">Your Favorites</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Ваши избранные</h1>
           </div>
           <p className="text-gray-600">
-            {favoriteCars.length} {favoriteCars.length === 1 ? 'car' : 'cars'} saved for later
+            {favoriteCars.length} {favoriteCars.length === 1 ? 'автомобиль' : favoriteCars.length < 5 ? 'автомобиля' : 'автомобилей'} сохранено для будущего просмотра
           </p>
         </div>
 
